@@ -1,38 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: flex;
+  background: linear-gradient(rgb(144, 144, 245), 20%, rgb(248, 192, 201));
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.about {
+  border-radius: 10px;
+  border: 2px black solid;
+  margin: 2em;
+  padding: 1em;
+  background-color: rgb(198, 245, 248);
+  width: 600px;
+  min-width: 300px;
+  max-width: 700px;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about p {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+
 }
