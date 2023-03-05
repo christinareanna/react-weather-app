@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import "../style/Weather.css"
-import axios from 'axios'
 import moment from 'moment'
+import { BiSearch } from "react-icons/bi";
+import axios from 'axios';
 
-function Weather(units) {
+
+
+function Weather({units}) {
 
     const [weather, setWeather] = useState('');
     const [city, setCity] = useState('');
@@ -35,6 +38,7 @@ function Weather(units) {
     // Convert k to C, then C to f
     let k = weather.temp;
     let C = k - 273.15
+    // 1.6 might not be 100% accurate but it's close enough.
     let f = (1.6 * C + 32).toFixed(0);
     let feelsLike = weather.feels_like;
     let feel = feelsLike - 273.15
@@ -55,13 +59,11 @@ function Weather(units) {
             </div>
             <div className="Weath">
                 <div className="welement">
-                    <p className='temp'>{f}&#8457;</p>
+                    <p>{f}&#8457;</p>
 
-                    <p>Weather: {weather.descp}</p>
+                    <p data-testid="weather">Weather: {weather.descp}</p>
 
                     <p>Feels like: {feelsTemp}&#8457;</p>
-                </div>
-                <div className="welement">
                     <p>
                         Humidity: {weather.humidity}%
                     </p>
@@ -82,7 +84,7 @@ function Weather(units) {
                 <div className="weather">
                     <form onSubmit={apiCall} className="form">
                         <input type="text" placeholder="Type in city name" name="loc" />
-                        <button className="bttn">Search</button>
+                        <button className="bttn"><BiSearch data-testid="search-icon" size={30}/></button>
                     </form>
                     {weather && <Weath />}
                 </div>

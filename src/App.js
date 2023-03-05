@@ -4,6 +4,7 @@ import Weather from "./components/Weather";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 
+
 function App() {
   return (
     <div>
@@ -11,7 +12,7 @@ function App() {
       {<BrowserRouter>
         <Nav />
         <Routes>
-          <Route exact path="/weather" element={<Weather />} />
+          <Route exact path="/weather" element={<Weather/>} />
           <Route exact path="/" element={<Home />} />
         </Routes>
         {/* <Footer /> */}
